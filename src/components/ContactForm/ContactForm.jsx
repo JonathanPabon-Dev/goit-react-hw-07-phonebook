@@ -1,11 +1,12 @@
 import React from 'react';
-import css from './ContactForm.module.css';
 import { useDispatch, useSelector } from 'react-redux';
+import css from './ContactForm.module.css';
 import { addContact } from '../../redux/contactSlice';
+import { selectContacts } from '../../redux/selectors';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contact.contacts);
+  const contacts = useSelector(selectContacts);
 
   const generateId = () => {
     const randomId = Math.floor(Math.random() * 10000);
