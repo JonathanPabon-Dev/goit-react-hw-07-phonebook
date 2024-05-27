@@ -1,12 +1,12 @@
-import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import css from './ContactItem.module.css';
-import { deleteContact } from '../../redux/contactSlice';
+import { deleteContact } from '../../redux/operations';
+import { selectContacts } from '../../redux/selectors';
 import PropTypes from 'prop-types';
+import css from './ContactItem.module.css';
 
 const ContactItem = ({ cId }) => {
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contact.contacts);
+  const contacts = useSelector(selectContacts);
 
   const contact = contacts.find(contact => contact.id === cId);
 
