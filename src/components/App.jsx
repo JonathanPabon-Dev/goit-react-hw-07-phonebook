@@ -13,7 +13,7 @@ import {
 const App = () => {
   const dispatch = useDispatch();
 
-  const items = useSelector(selectContacts);
+  const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
@@ -31,7 +31,7 @@ const App = () => {
 
       {isLoading && <b>Loading contacts...</b>}
       {error && <b>{error}</b>}
-      {items.length > 0 && <ContactList />}
+      {contacts.length > 0 && <ContactList />}
     </>
   );
 };
