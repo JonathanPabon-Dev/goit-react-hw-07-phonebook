@@ -11,7 +11,7 @@ const ContactItem = ({ cId }) => {
   const contact = contacts.find(contact => contact.id === cId);
 
   const handleDeleteBtn = id => {
-    dispatch(deleteContact({ id }));
+    dispatch(deleteContact(id));
   };
 
   return (

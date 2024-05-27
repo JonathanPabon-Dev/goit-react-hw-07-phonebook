@@ -25,13 +25,19 @@ const App = () => {
     <>
       <h1 className="mt-5">Phonebook</h1>
       <ContactForm />
-
       <h2 className="mt-5">Contacts</h2>
       <Filter />
-
-      {isLoading && <b>Loading contacts...</b>}
-      {error && <b>{error}</b>}
-      {contacts.length > 0 && <ContactList />}
+      {isLoading ? (
+        <p className="mt-3">
+          <b>Loading contacts...</b>
+        </p>
+      ) : error ? (
+        <p className="mt-3">
+          <b>{error}</b>
+        </p>
+      ) : (
+        contacts.length > 0 && <ContactList />
+      )}
     </>
   );
 };
